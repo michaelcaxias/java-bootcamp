@@ -1,4 +1,4 @@
-package loops;
+package poo_java_1.loops;
 
 public class Loops {
 

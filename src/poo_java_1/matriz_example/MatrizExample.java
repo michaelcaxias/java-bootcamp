@@ -1,4 +1,4 @@
-package matriz_example;
+package poo_java_1.matriz_example;
 
 public class MatrizExample {
     public static void main(String[] args) {

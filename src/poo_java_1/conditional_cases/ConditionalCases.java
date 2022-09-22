@@ -1,4 +1,4 @@
-package conditional_cases;
+package poo_java_1.conditional_cases;
 
 public class ConditionalCases {
     public static void main(String[] args) {

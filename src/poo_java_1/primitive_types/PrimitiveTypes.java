@@ -1,4 +1,4 @@
-package primitive_types;
+package poo_java_1.primitive_types;
 
 public class PrimitiveTypes {
     public static void main(String[] args) {
