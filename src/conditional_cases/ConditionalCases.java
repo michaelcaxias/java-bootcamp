@@ -1,6 +1,6 @@
-package exemplo02;
+package conditional_cases;
 
-public class Exemplo02 {
+public class ConditionalCases {
     public static void main(String[] args) {
         int number = 5;
         if (number > 0) {

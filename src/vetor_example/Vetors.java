@@ -1,6 +1,6 @@
-package exemplo04;
+package vetor_example;
 
-public class Exemplo04 {
+public class Vetors {
     public static void main(String[] args) {
         int vetor[] = new int[10];
 

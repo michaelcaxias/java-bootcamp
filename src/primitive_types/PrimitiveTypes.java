@@ -1,6 +1,6 @@
-package exemplo01;
+package primitive_types;
 
-public class Exemplo01 {
+public class PrimitiveTypes {
     public static void main(String[] args) {
         String nome = "Michael";
         int idade = 19;

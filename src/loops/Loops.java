@@ -1,6 +1,6 @@
-package exemplo03;
+package loops;
 
-public class Exemplo03 {
+public class Loops {
 
     public static void main(String[] args) {
         for (int contador = 0; contador < 10; contador++) {
