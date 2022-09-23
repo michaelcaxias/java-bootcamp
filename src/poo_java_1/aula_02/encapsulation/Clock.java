@@ -1,4 +1,4 @@
-package poo_java_1.aula_02.exemplo02;
+package poo_java_1.aula_02.encapsulation;
 
 public class Clock {
     private int hour, minute, second;

@@ -1,4 +1,4 @@
-package poo_java_1.aula_02.exemplo01;
+package poo_java_1.aula_02.methods_and_attributes;
 
 public class AppBook {
     public static void main(String[] args) {
