@@ -6,6 +6,9 @@ public class AppBook {
 
         myBook.title = "Clean Code";
         myBook.author = "Robert Martin";
+        myBook.pages = 320;
+
+        myBook.open();
 
         System.out.println("Livro: " + myBook.title);
     }
