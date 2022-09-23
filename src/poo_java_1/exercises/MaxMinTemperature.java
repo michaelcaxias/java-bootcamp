@@ -52,7 +52,7 @@ public class MaxMinTemperature {
             }
         }
 
-        System.out.println(String.format("A temperatura mais baixa foi %s da cidade %s", min, minCity));
-        System.out.println(String.format("A temperatura mais alta foi %s da cidade %s", max, maxCity));
+        System.out.printf("A temperatura mais baixa foi %s da cidade %s%n", min, minCity);
+        System.out.printf("A temperatura mais alta foi %s da cidade %s%n", max, maxCity);
     }
 }
