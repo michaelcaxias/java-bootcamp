@@ -1,4 +1,4 @@
-package poo_java_1.vetor_example;
+package poo_java_1.aula_01.vetor_example;
 
 public class Vetors {
     public static void main(String[] args) {
