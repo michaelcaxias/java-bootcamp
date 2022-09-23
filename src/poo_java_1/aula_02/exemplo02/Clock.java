@@ -3,6 +3,12 @@ package poo_java_1.aula_02.exemplo02;
 public class Clock {
     private int hour, minute, second;
 
+    public Clock(int hour, int minute, int second) {
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
+    }
+
     public void setHour(int newHour) {
 
         if (newHour >= 24) {
