@@ -6,10 +6,10 @@ public class Basic extends Customer {
     }
 
     public void balanceInquiry() {
-        System.out.println("Consultando saldo...");
+        CashInquiry.inquiry();
     }
 
     public void payment() {
-        System.out.println("Pagando serviço..");
+        ServicePayment.payment();
     }
 }
