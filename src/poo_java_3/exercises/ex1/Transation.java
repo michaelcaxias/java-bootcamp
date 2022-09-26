@@ -1,6 +1,6 @@
 package poo_java_3.exercises.ex1;
 
-public interface Transation {
+public abstract class Transation {
     public static void transationOk() {
         System.out.println("Ok");
     }
