@@ -5,6 +5,8 @@ public class AppFigure {
     public static void main(String[] args) {
         Figure circle = new Circle();
 
+        GeneratePDF.generate(circle);
+
         System.out.println(circle.getName());
     }
 }
