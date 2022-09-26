@@ -1,7 +1,7 @@
 package poo_java_3.aula_01;
 
-public class Circulo extends Figura {
-    public Circulo() {
+public class Circle extends Figure {
+    public Circle() {
         super("Circulo");
     }
 }

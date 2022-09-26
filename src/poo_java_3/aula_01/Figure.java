@@ -1,9 +1,9 @@
 package poo_java_3.aula_01;
 
-public abstract class Figura {
+public abstract class Figure {
     private String name;
 
-    public Figura(String name) {
+    public Figure(String name) {
         this.name = name;
     }
 
