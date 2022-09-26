@@ -1,4 +1,4 @@
-package poo_java_1.aula_02.methods_and_attributes;
+package poo_java_2.aula_01.methods_and_attributes;
 
 public class Book {
     String title;

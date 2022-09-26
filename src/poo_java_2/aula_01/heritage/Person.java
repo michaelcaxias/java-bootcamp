@@ -1,4 +1,4 @@
-package poo_java_1.aula_02.heritage;
+package poo_java_2.aula_01.heritage;
 
 public class Person {
     String name;
