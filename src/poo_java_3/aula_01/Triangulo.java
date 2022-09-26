@@ -1,4 +1,7 @@
 package poo_java_3.aula_01;
 
-public class Triangulo {
+public class Triangulo extends Figura {
+    public Triangulo() {
+        super("Triangulo");
+    }
 }
