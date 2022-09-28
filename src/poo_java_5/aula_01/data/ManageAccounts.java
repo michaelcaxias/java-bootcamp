@@ -39,4 +39,8 @@ public class ManageAccounts {
         }
         account.deposit(value);
     }
+
+    public boolean withdraw() {
+
+    }
 }
