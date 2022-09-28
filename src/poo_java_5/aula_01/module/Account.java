@@ -17,7 +17,7 @@ public abstract class Account {
         return number;
     }
 
-    public double getMoney() {
+    public double getBalance() {
         return balance;
     }
 
@@ -33,7 +33,7 @@ public abstract class Account {
             throw new InvalidNumberException("O valor é inválido. Insira um número maior que 0.");
         }
         balance -= value;
-        return true;
+        return false;
      }
 
     @Override
