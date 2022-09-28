@@ -3,7 +3,7 @@ package poo_java_5.aula_01.module;
 import poo_java_5.aula_01.exception.InvalidNumberException;
 
 public class SavingsAccount extends Account {
-    private static double tax; // unica taxa para todos os objetos
+    private static double tax = 0.1; // unica taxa para todos os objetos
     public SavingsAccount(int number, Customer customer) {
         super(number, customer);
     }
