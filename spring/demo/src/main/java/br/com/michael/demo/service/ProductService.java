@@ -26,4 +26,14 @@ public class ProductService {
             return new Product(id, "Produto inexistente", 0);
         }
     }
+
+    public Product deleteById(int id) {
+
+        try {
+            int currentId = id - 1;
+            return products.remove(currentId);
+        } catch (IndexOutOfBoundsException e) {
+            return new Product(id, "Produto inexistente", 0);
+        }
+    }
 }
