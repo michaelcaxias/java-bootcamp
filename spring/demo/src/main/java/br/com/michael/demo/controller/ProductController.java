@@ -20,12 +20,13 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> findProductById(@PathVariable("id") int id) {
+    public ResponseEntity<?> findProductById(@PathVariable("id") String id) {
         try {
-            Product product = new ProductService().findProductById(id);
+            int currentId = Integer.parseInt(id);
+            Product product = new ProductService().findProductById(currentId);
             return new ResponseEntity<>(product, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Erro teste", HttpStatus.NOT_FOUND);
         }
 
     }
