@@ -13,10 +13,21 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    @GetMapping("/")
+    public ResponseEntity<List<Product>> getAll() {
+        List<Product> products = new ProductService().getAll();
+        return ResponseEntity.ok(products);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Product> findProductById(@PathVariable("id") int id) {
-        Product product = new ProductService().findProductById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        try {
+            Product product = new ProductService().findProductById(id);
+            return new ResponseEntity<>(product, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @DeleteMapping("/{id}")

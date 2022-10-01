@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductService {
@@ -15,6 +16,10 @@ public class ProductService {
         products.add(new Product(1, "Macbook Pro 2020", 21000));
         products.add(new Product(2, "Acer Nitro 5", 8000));
         products.add(new Product(3, "GeniusDesk", 3500));
+    }
+
+    public List<Product> getAll() {
+        return products;
     }
 
     public Product findProductById(int id) {
