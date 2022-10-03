@@ -32,4 +32,11 @@ public class VehicleController {
 
         return new ResponseEntity<>(vehicles, HttpStatus.OK);
     }
+
+    @GetMapping("/byvalue")
+    public ResponseEntity<List<Vehicle>> getAllOrderByValue() {
+        List<Vehicle> vehicles = service.getAllOrderByValue();
+
+        return new ResponseEntity<>(vehicles, HttpStatus.OK);
+    }
 }

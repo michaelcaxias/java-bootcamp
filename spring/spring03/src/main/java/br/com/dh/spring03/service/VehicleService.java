@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VehicleService  implements IVehicle {
@@ -34,4 +35,16 @@ public class VehicleService  implements IVehicle {
 
         return vehicles;
     }
+
+    @Override
+    public List<Vehicle> getAllOrderByValue() {
+        List<Vehicle> vehicles = repository.getAll();
+
+        if (vehicles == null) {
+            throw new NotFoundException("Veiculo nao encontrado");
+        }
+
+        return vehicles.stream().sorted().collect(Collectors.toList());
+    }
+
 }
