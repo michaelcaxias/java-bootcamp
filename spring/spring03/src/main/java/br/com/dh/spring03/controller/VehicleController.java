@@ -1,8 +1,7 @@
 package br.com.dh.spring03.controller;
 
-import br.com.dh.spring03.exception.VehicleNotFoundException;
+import br.com.dh.spring03.exception.NotFound;
 import br.com.dh.spring03.model.Vehicle;
-import br.com.dh.spring03.service.IVehicle;
 import br.com.dh.spring03.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +24,7 @@ public class VehicleController {
             Vehicle vehicle = service.getByBoard(board);
 
             return new ResponseEntity<>(vehicle, HttpStatus.OK);
-        } catch (VehicleNotFoundException e) {
+        } catch (NotFound e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
