@@ -22,6 +22,10 @@ public class VehicleController {
     public ResponseEntity<Vehicle> getByBoard(@PathVariable String board) {
         Vehicle vehicle = service.getByBoard(board);
 
-        return new ResponseEntity<>(vehicle, HttpStatus.OK);
+        if (vehicle != null) {
+            return new ResponseEntity<>(vehicle, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
