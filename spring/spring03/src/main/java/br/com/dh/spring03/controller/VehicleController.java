@@ -1,6 +1,6 @@
 package br.com.dh.spring03.controller;
 
-import br.com.dh.spring03.exception.NotFound;
+import br.com.dh.spring03.exception.NotFoundException;
 import br.com.dh.spring03.model.Vehicle;
 import br.com.dh.spring03.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,8 @@ public class VehicleController {
 
     @GetMapping("/{board}")
     public ResponseEntity<Vehicle> getByBoard(@PathVariable String board) {
-        try {
-            Vehicle vehicle = service.getByBoard(board);
+        Vehicle vehicle = service.getByBoard(board);
 
-            return new ResponseEntity<>(vehicle, HttpStatus.OK);
-        } catch (NotFound e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        return new ResponseEntity<>(vehicle, HttpStatus.OK);
     }
 }
