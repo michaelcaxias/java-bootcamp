@@ -27,6 +27,8 @@ public class VehicleController {
             return new ResponseEntity<>(vehicle, HttpStatus.OK);
         } catch (VehicleNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
