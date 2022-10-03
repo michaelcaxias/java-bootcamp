@@ -26,6 +26,12 @@ public class VehicleService  implements IVehicle {
 
     @Override
     public List<Vehicle> getAll() {
-        return null;
+        List<Vehicle> vehicles = repository.getAll();
+
+        if (vehicles == null) {
+            throw new NotFoundException("Veiculo nao encontrado");
+        }
+
+        return vehicles;
     }
 }

@@ -24,7 +24,19 @@ public class VehicleRepo {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
+
+    public List<Vehicle> getAll() {
+        List<Vehicle> vehicles = null;
+        try {
+            vehicles = Arrays.asList(mapper.readValue(new File(linkFile), Vehicle[].class));
+            return vehicles;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
         return null;

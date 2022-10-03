@@ -1,6 +1,5 @@
 package br.com.dh.spring03.controller;
 
-import br.com.dh.spring03.exception.NotFoundException;
 import br.com.dh.spring03.model.Vehicle;
 import br.com.dh.spring03.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/vehicles")
@@ -23,5 +24,12 @@ public class VehicleController {
         Vehicle vehicle = service.getByBoard(board);
 
         return new ResponseEntity<>(vehicle, HttpStatus.OK);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<Vehicle>> getAll() {
+        List<Vehicle> vehicles = service.getAll();
+
+        return new ResponseEntity<>(vehicles, HttpStatus.OK);
     }
 }
