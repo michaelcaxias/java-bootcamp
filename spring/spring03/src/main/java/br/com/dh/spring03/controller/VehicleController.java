@@ -37,6 +37,13 @@ public class VehicleController {
         return new ResponseEntity<>(vehicles, HttpStatus.OK);
     }
 
+    @GetMapping("/model/{model}")
+    public ResponseEntity<List<Vehicle>> getByModel(@PathVariable String model) {
+        List<Vehicle> vehicles = service.getByModel(model);
+
+        return new ResponseEntity<>(vehicles, HttpStatus.OK);
+    }
+
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Vehicle vehicle) {

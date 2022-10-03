@@ -52,4 +52,11 @@ public class VehicleService  implements IVehicle {
         repository.addVehicle(vehicle);
     }
 
+    @Override
+    public List<Vehicle> getByModel(String model) {
+        return this.getAll().stream()
+                .filter((vehicle -> vehicle.getModel().toLowerCase().contains(model.toLowerCase())))
+                .collect(Collectors.toList());
+    }
+
 }

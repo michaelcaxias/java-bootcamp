@@ -11,4 +11,6 @@ public interface IVehicle {
     List<Vehicle> getAllOrderByValue();
 
     void create(Vehicle vehicle);
+
+    List<Vehicle> getByModel(String model);
 }
