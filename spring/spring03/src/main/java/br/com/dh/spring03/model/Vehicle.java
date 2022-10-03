@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vehicle {
-    private String sign;
+    private String board;
     private String model;
     private int year;
     private double price;
