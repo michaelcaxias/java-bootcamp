@@ -5,6 +5,6 @@ import br.com.dh.spring03.model.Vehicle;
 import java.util.List;
 
 public interface IVehicle {
-    Vehicle get(String board);
+    Vehicle getByBoard(String board);
     List<Vehicle> getAll();
 }

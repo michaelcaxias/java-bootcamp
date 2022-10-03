@@ -13,7 +13,7 @@ public class VehicleRepo {
     private final String linkFile = "src/main/resources/vehicles.json";
     ObjectMapper mapper = new ObjectMapper();
 
-    public Vehicle get(String board) {
+    public Vehicle getByBoard(String board) {
         List<Vehicle> vehicles = null;
         try {
             vehicles = Arrays.asList(mapper.readValue(new File(linkFile), Vehicle[].class));

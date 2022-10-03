@@ -19,8 +19,8 @@ public class VehicleController {
     private VehicleService service;
 
     @GetMapping("/{board}")
-    public ResponseEntity<Vehicle> get(@PathVariable String board) {
-        Vehicle vehicle = service.get(board);
+    public ResponseEntity<Vehicle> getByBoard(@PathVariable String board) {
+        Vehicle vehicle = service.getByBoard(board);
 
         return new ResponseEntity<>(vehicle, HttpStatus.OK);
     }
