@@ -17,14 +17,16 @@ public class VehicleRepo {
         List<Vehicle> vehicles = null;
         try {
             vehicles = Arrays.asList(mapper.readValue(new File(linkFile), Vehicle[].class));
-        } catch (Exception e) {
-            System.out.println("Deu pau");
-        }
-        for (Vehicle vehicle: vehicles) {
-            if (vehicle.getBoard().equals(board)) {
-                return vehicle;
+
+            for (Vehicle vehicle: vehicles) {
+                if (vehicle.getBoard().equals(board)) {
+                    return vehicle;
+                }
             }
+        } catch (Exception e) {
+            System.out.println(e);
         }
+
         return null;
     }
 }
