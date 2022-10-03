@@ -9,4 +9,6 @@ public interface IVehicle {
     Vehicle getByBoard(String board) throws NotFoundException;
     List<Vehicle> getAll();
     List<Vehicle> getAllOrderByValue();
+
+    void create(Vehicle vehicle);
 }

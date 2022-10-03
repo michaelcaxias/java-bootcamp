@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -48,6 +49,9 @@ public class VehicleRepo {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         List<Vehicle> vehicles = this.getAll();
+
+        vehicles = new ArrayList<>(vehicles);
+
         vehicles.add(newVehicle);
 
         try {
