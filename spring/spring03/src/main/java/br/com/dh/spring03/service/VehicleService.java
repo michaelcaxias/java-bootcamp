@@ -1,5 +1,6 @@
 package br.com.dh.spring03.service;
 
+import br.com.dh.spring03.exception.VehicleNotFoundException;
 import br.com.dh.spring03.model.Vehicle;
 import br.com.dh.spring03.repository.VehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,14 @@ public class VehicleService  implements IVehicle {
     private VehicleRepo repository;
 
     @Override
-    public Vehicle getByBoard(String board) {
-        return repository.getByBoard(board);
+    public Vehicle getByBoard(String board) throws VehicleNotFoundException {
+        Vehicle vehicle = repository.getByBoard(board);
+
+        if (vehicle == null) {
+            throw new VehicleNotFoundException("Veiculo nao encontrado");
+        }
+
+        return vehicle;
     }
 
     @Override

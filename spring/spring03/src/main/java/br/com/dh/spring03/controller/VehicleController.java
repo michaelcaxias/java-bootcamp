@@ -1,5 +1,6 @@
 package br.com.dh.spring03.controller;
 
+import br.com.dh.spring03.exception.VehicleNotFoundException;
 import br.com.dh.spring03.model.Vehicle;
 import br.com.dh.spring03.service.IVehicle;
 import br.com.dh.spring03.service.VehicleService;
@@ -20,12 +21,12 @@ public class VehicleController {
 
     @GetMapping("/{board}")
     public ResponseEntity<Vehicle> getByBoard(@PathVariable String board) {
-        Vehicle vehicle = service.getByBoard(board);
+        try {
+            Vehicle vehicle = service.getByBoard(board);
 
-        if (vehicle != null) {
             return new ResponseEntity<>(vehicle, HttpStatus.OK);
+        } catch (VehicleNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
