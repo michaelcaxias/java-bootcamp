@@ -1,0 +1,26 @@
+[
+  {
+    "board": "2B3351",
+    "model": "Tesla",
+    "year": 2022,
+    "price": 15000.0
+  },
+  {
+    "board": "A4B351",
+    "model": "Gol",
+    "year": 2022,
+    "price": 8000.0
+  },
+  {
+    "board": "A6A351",
+    "model": "Asd",
+    "year": 2002,
+    "price": 55000.0
+  },
+  {
+    "board": "V0AB351",
+    "model": "Fusca",
+    "year": 1970,
+    "price": 5000.0
+  },
+]
