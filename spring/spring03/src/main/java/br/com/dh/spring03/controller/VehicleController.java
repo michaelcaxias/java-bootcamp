@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
-    @Autowired // injeçao de dependencias (o framework gera o objeto)
+		@Autowired // injeçao de dependencias (o framework gera o objeto)
     private VehicleService service;
 
     @GetMapping("/{board}")
@@ -49,4 +49,5 @@ public class VehicleController {
     public void create(@RequestBody Vehicle vehicle) {
         service.create(vehicle);
     }
+
 }
