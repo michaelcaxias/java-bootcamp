@@ -1,7 +1,7 @@
 package com.testing.aula1.calculadora;
 
-public class Calculadora {
-    public int soma(int firstNumber, int secondNumber) {
+public class Calculator {
+    public int sum(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }
 }
