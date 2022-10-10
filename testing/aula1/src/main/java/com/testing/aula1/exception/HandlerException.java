@@ -24,8 +24,9 @@ public class HandlerException extends ResponseEntityExceptionHandler {
             WebRequest webRequest) {
 
         List<FieldError> errors = ex.getBindingResult().getFieldErrors();
-        String errorsField = errors.stream().map(FieldError::getField).collect(Collectors.joining());
-        String errorsFieldMessages = errors.stream().map(FieldError::getDefaultMessage).collect(Collectors.joining());
+        String errorsField = errors.stream().map(FieldError::getField).collect(Collectors.joining(","));
+        String errorsFieldMessages = errors.stream().map(FieldError::getDefaultMessage)
+                .collect(Collectors.joining(","));
         
 
         ExceptionDetails exceptionDetails = ExceptionDetails.builder()
