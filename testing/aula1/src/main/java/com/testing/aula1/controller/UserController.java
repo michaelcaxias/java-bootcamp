@@ -1,5 +1,7 @@
 package com.testing.aula1.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +15,7 @@ import com.testing.aula1.dto.UserDto;
 public class UserController {
     
     @PostMapping
-    public ResponseEntity<UserDto> newUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> newUser(@Valid @RequestBody UserDto userDto) {
 
         return ResponseEntity.ok(userDto);
     }
