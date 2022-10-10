@@ -41,4 +41,21 @@ public class CalculatorTest {
         // validate
         assertEquals(expected, response);
     }
+
+    @Test
+    public void divide_returnZero_whenDivisorEqualsZero() {
+        // setup
+        Calculator calculator = new Calculator();
+
+        double firstNumber = 30;
+        double secondNumber = 0;
+
+        double expected = 0;
+
+        // run
+        double response = calculator.divide(firstNumber, secondNumber);
+
+        // validate
+        assertEquals(expected, response);
+    }
 }
