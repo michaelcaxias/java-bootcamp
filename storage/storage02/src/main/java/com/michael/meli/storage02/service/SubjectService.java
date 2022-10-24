@@ -5,6 +5,7 @@ import com.michael.meli.storage02.repository.ISubjectRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,5 +19,11 @@ public class SubjectService implements ISubjectService {
         Optional<Subject> subject = repo.findById(id);
 
         return subject.orElse(null);
+    }
+
+    @Override
+    public List<Subject> findAll() {
+
+        return repo.findAll();
     }
 }

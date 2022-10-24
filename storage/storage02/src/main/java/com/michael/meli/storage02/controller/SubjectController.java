@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/subject")
 public class SubjectController {
@@ -26,5 +28,12 @@ public class SubjectController {
 
         return ResponseEntity.notFound().build();
 
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Subject>> getAll() {
+        List<Subject> subjects = service.findAll();
+
+        return ResponseEntity.ok(subjects);
     }
 }

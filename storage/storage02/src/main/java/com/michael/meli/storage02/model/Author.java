@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,4 +23,13 @@ public class Author {
     @OneToOne(mappedBy = "author")
     @JsonIgnoreProperties("author") // não preencher o atributo author novamente
     private Address address;
+
+    @ManyToMany
+    @JoinTable(  // tabela de junçao
+            name = "author_books", // nome da tabela
+            joinColumns = @JoinColumn(name = "id_author", referencedColumnName = "id"), // cria uma coluna com o name id_author referenciado o id da tabela author
+            inverseJoinColumns = @JoinColumn(name = "id_book", referencedColumnName = "id") // mesmo do de cima, mas inverso
+    )
+    @JsonIgnoreProperties("authors")
+    private Set<Book> books;
 }
