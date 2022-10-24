@@ -4,4 +4,5 @@ import com.michael.meli.storage02.model.Author;
 
 public interface IAuthorService {
     Author create(Author author);
+    Author findById(long id);
 }

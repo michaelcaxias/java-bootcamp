@@ -5,6 +5,8 @@ import com.michael.meli.storage02.repository.IAuthorRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class AuthorService implements IAuthorService {
@@ -15,4 +17,13 @@ public class AuthorService implements IAuthorService {
     public Author create(Author author) {
         return repo.save(author);
     }
+
+    @Override
+    public Author findById(long id) {
+        Optional<Author> optionalAuthor = repo.findById(id);
+
+        return optionalAuthor.orElse(null);
+
+    }
+
 }

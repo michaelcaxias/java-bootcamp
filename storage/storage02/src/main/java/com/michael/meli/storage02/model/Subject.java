@@ -6,20 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Author {
+public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false) // nome é obrigatorio
+    @Column(nullable = false)
     private String name;
 
-    @OneToOne(mappedBy = "author")
-    @JsonIgnoreProperties("author") // não preencher o atributo author novamente
-    private Address address;
+    @OneToMany(mappedBy = "subject")
+    @JsonIgnoreProperties("subject")
+    private List<Book> books;
 }

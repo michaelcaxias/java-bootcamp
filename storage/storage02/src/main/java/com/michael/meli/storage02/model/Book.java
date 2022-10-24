@@ -11,15 +11,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Author {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false) // nome é obrigatorio
-    private String name;
+    @Column(length = 50, nullable = false)
+    private String title;
 
-    @OneToOne(mappedBy = "author")
-    @JsonIgnoreProperties("author") // não preencher o atributo author novamente
-    private Address address;
+    @ManyToOne
+    @JoinColumn(name = "id_subject")
+    @JsonIgnoreProperties("books")
+    private Subject subject;
+
 }
