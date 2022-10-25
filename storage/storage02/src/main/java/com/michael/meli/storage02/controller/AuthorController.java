@@ -1,5 +1,6 @@
 package com.michael.meli.storage02.controller;
 
+import com.michael.meli.storage02.dto.AuthorDTO;
 import com.michael.meli.storage02.model.Author;
 import com.michael.meli.storage02.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,23 @@ public class AuthorController {
     @GetMapping("/{id}")
     ResponseEntity<Author> findById(@PathVariable long id) {
         Author author = service.findById(id);
+
+        if (author != null) {
+            return ResponseEntity.ok(author);
+        }
+
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById (@PathVariable long id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/dto/{id}")
+    ResponseEntity<AuthorDTO> getById(@PathVariable long id) {
+        AuthorDTO author = service.getById(id);
 
         if (author != null) {
             return ResponseEntity.ok(author);

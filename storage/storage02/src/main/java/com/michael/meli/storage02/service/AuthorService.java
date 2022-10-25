@@ -1,5 +1,6 @@
 package com.michael.meli.storage02.service;
 
+import com.michael.meli.storage02.dto.AuthorDTO;
 import com.michael.meli.storage02.model.Author;
 import com.michael.meli.storage02.repository.IAuthorRepo;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,16 @@ public class AuthorService implements IAuthorService {
 
         return optionalAuthor.orElse(null);
 
+    }
+
+    @Override
+    public void deleteById(long id) {
+        repo.deleteById(id);
+    }
+
+    @Override
+    public AuthorDTO getById(long id) {
+        return repo.getById(id);
     }
 
 }

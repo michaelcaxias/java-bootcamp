@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IBookService {
     Book findById(long id);
+    void deleteById(long id);
 }
