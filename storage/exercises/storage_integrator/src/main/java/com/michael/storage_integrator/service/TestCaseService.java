@@ -1,13 +1,25 @@
 package com.michael.storage_integrator.service;
 
 import com.michael.storage_integrator.model.TestCase;
+import com.michael.storage_integrator.repository.ITestCaseRepo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class TestCaseService implements ITestCaseService {
+
+    private final ITestCaseRepo repo;
+
     @Override
     public TestCase create(TestCase testCase) {
-        return null;
+        TestCase createdTestCase = repo.save(testCase);
+        createdTestCase.setLast_update(LocalDateTime.now());
+
+        return createdTestCase;
     }
 
     @Override
