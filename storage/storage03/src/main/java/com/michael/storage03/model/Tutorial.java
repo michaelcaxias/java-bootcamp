@@ -22,5 +22,5 @@ public class Tutorial {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private String status;
+    private Status status;
 }
