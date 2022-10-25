@@ -7,7 +7,7 @@ import java.util.List;
 public interface ITestCaseService {
     TestCase create(TestCase testCase);
     List<TestCase> getAll();
-    TestCase getById(long id);
+    TestCase getById(long id) throws Exception;
     TestCase updateById(long id, TestCase testCase);
     void deleteById(long id);
     List<TestCase> getAllByLastUpdate(String date);
