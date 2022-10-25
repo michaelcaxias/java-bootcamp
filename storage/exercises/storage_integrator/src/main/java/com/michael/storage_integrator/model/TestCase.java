@@ -26,5 +26,6 @@ public class TestCase {
     private boolean passed;
 
     private int number_of_tries;
+
     private LocalDateTime last_update;
 }
