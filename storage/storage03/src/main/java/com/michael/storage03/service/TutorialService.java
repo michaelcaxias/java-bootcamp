@@ -1,5 +1,6 @@
 package com.michael.storage03.service;
 
+import com.michael.storage03.exceptions.InvalidParamException;
 import com.michael.storage03.model.Tutorial;
 import com.michael.storage03.repository.ITutorialRepo;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +16,14 @@ public class TutorialService implements ITutorialService {
 
     @Override
     public Tutorial create(Tutorial tutorial) {
-        repo.save(tutorial);
-        return null;
+        if (tutorial == null) {
+            throw new InvalidParamException("O tutorial não pode ser nulo");
+        }
+        if (tutorial.getId() != null) {
+            throw new InvalidParamException("O tutorial não pode ter ID");
+        }
+
+        return repo.save(tutorial);
     }
 
     @Override
